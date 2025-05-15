@@ -27,6 +27,36 @@ Projektet är uppdelat i flera moduler:
 - `datetime.[c/h]`: Tidshantering
 - `led.[c/h]`: LED-kontroll
 
+## Funktioner i `main.c`
+
+- **WiFi-anslutning**  
+  Kopplar upp Pico W till ett WiFi-nätverk med angivet SSID och lösenord. Visar anslutningsstatus på en LCD-skärm.
+
+- **MQTT-klient**  
+  Initierar och ansluter till en MQTT-broker (t.ex. en Raspberry Pi Zero 2 W). Skickar avståndsvärden från ultraljudssensorn i realtid till backend.
+
+- **Sensorhantering**  
+  Läser av ultraljudssensorn som mäter avstånd till närliggande objekt för rörelsedetektering. Visar avstånd och aktuell tid på LCD-skärmen.
+
+- **Larmlogik**  
+  Använder två knappar:  
+  - En knapp för att aktivera eller avaktivera larmet.  
+  - En knapp för manuell överskrivning av larmet.  
+  
+  När larmet är aktiverat och sensorn detekterar rörelse inom 10 cm:  
+  - Buzzern ljuder.  
+  - En LED blinkar som visuell indikation.  
+  - Avståndsvärdet skickas till MQTT-brokern.
+
+- **Status och feedback**  
+  Ger användaren visuell feedback på LCD-skärmen för WiFi-status, larmstatus och tid.
+
+- **Kontinuerlig loop**  
+  Programmet körs i en oändlig loop som uppdaterar sensorer, larmläge och skickar data kontinuerligt.
+
+---
+
+
 
 ## 🧱 Tech Stack
 
