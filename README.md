@@ -4,6 +4,30 @@ Ett komplett IoT-baserat hemlarmssystem som använder MQTT, Flask, ultraljudssen
 
 ---
 
+## 🧾 Hårdvarukomponenter
+
+- Raspberry Pi Pico W
+- HC-SR04 (ultraljudssensor)
+- 16x2 LCD-display (I2C)
+- Buzzer
+- LED
+- 2 st tryckknappar
+- Strömförsörjning
+- Breadboard & kopplingskablar
+
+## 🔧 Programvaruarkitektur
+
+Projektet är uppdelat i flera moduler:
+
+- `main.c`: Huvudlogik för larm, knappar, MQTT och avståndsmätning
+- `lcd.[c/h]`: Hantering av LCD-display
+- `wifi.[c/h]`: Anslutning till WiFi-nätverk
+- `buzzer.[c/h]`: Summerstyrning
+- `ultrasonic.[c/h]`: Avståndsmätning med HC-SR04
+- `datetime.[c/h]`: Tidshantering
+- `led.[c/h]`: LED-kontroll
+
+
 ## 🧱 Tech Stack
 
 | Lager             | Teknik                                       |
